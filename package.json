@@ -1,0 +1,32 @@
+{
+  "name": "wordplay",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varbrad/wordplay.git"
+  },
+  "homepage": "https://github.com/varbrad/wordplay#readme",
+  "bugs": {
+    "url": "https://github.com/varbrad/wordplay/issues"
+  },
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "lint": "eslint src --ext=ts,tsx",
+    "start": "next start"
+  },
+  "dependencies": {
+    "firebase": "^7.14.1",
+    "next": "^9.3.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-zoom-pan-pinch": "^1.6.1"
+  },
+  "devDependencies": {
+    "@drpg/eslint-config": "^1.0.18-alpha.0",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "eslint": "^6.8.0",
+    "sass": "^1.26.5"
+  }
+}
