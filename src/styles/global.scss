@@ -3,12 +3,13 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Work Sans", sans-serif;
   font-display: swap;
 }
 
 html,
 body {
+  width: 100vw;
+  height: 100vh;
   background-color: #86ca95;
 }

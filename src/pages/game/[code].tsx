@@ -1,7 +1,7 @@
 import React from 'react'
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
 import { DndProvider } from 'react-dnd'
-import Backend from 'react-dnd-html5-backend'
+import Backend from 'react-dnd-touch-backend'
 import { Provider } from 'mutik'
 import TileBar from '../../components/game/TileBar/TileBar'
 import { store } from '../../store/store'
@@ -13,8 +13,10 @@ const Game = (): JSX.Element => {
       <div>
         <DndProvider backend={Backend}>
           <TransformWrapper
-            zoomIn={{ step: 200 }}
-            zoomOut={{ step: 200 }}
+            options={{
+              maxScale: 2.5,
+            }}
+            wheel={{ step: 100 }}
             doubleClick={{ disabled: true }}
           >
             <TransformComponent>
