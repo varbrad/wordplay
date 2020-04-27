@@ -20,15 +20,14 @@
     "mutik": "^0.1.4",
     "next": "^9.3.5",
     "react": "0.0.0-experimental-e5d06e34b",
-    "react-dnd": "^10.0.2",
-    "react-dnd-html5-backend": "^10.0.2",
-    "react-dnd-touch-backend": "^10.0.2",
+    "react-beautiful-dnd": "^13.0.0",
     "react-dom": "0.0.0-experimental-e5d06e34b",
     "react-zoom-pan-pinch": "^1.6.1"
   },
   "devDependencies": {
     "@drpg/eslint-config": "^1.0.18-alpha.0",
     "@types/react": "^16.9.34",
+    "@types/react-beautiful-dnd": "^12.1.2",
     "@types/react-dom": "^16.9.6",
     "eslint": "^6.8.0",
     "sass": "^1.26.5"

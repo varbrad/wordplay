@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
+import TextInput from '../components/ui/TextInput/TextInput'
 
 const Index = (): JSX.Element => {
   const [code, setCode] = useState('')
@@ -7,13 +8,9 @@ const Index = (): JSX.Element => {
   return (
     <div>
       <p>Enter a room code</p>
-      <input
-        type='text'
-        value={code}
-        onChange={(e): void => setCode(e.target.value)}
-      />
+      <TextInput value={code} onChange={setCode} />
       <Link href='/game/[code]' as={`/game/${code}`}>
-        Go
+        <a>Go</a>
       </Link>
     </div>
   )

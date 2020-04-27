@@ -1,27 +1,31 @@
 import React from 'react'
-import { useDrag } from 'react-dnd'
+import { Draggable } from 'react-beautiful-dnd'
 import { Tile as TileType } from '../../../game/board'
 import styles from './Tile.module.scss'
 
 interface Props {
+  index: number
   tile: TileType
 }
 
-const Tile = ({ tile }: Props): JSX.Element => {
-  const [{ isDragging }, drag] = useDrag({
-    item: { tile, type: 'tile' },
-    collect: monitor => ({
-      isDragging: monitor.isDragging(),
-    }),
-  })
-
-  const opacity = isDragging ? 0.5 : 1
-
+const Tile = ({ index, tile }: Props): JSX.Element => {
   return (
-    <div ref={drag} className={styles.tile} style={{ opacity }}>
-      <p className={styles.letter}>{tile.letter}</p>
-      {tile.type === 'standard' && <p className={styles.score}>{tile.score}</p>}
-    </div>
+    <Draggable draggableId={tile.letter} index={index}>
+      {(provided): JSX.Element => (
+        <div
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          className={styles.tile}
+          style={provided.draggableProps.style}
+        >
+          <p className={styles.letter}>{tile.letter}</p>
+          {tile.type === 'standard' && (
+            <p className={styles.score}>{tile.score}</p>
+          )}
+        </div>
+      )}
+    </Draggable>
   )
 }
 

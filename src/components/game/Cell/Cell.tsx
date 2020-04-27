@@ -1,7 +1,6 @@
-import React, { useCallback } from 'react'
-import { useDrop } from 'react-dnd'
+import React from 'react'
+import { Droppable } from 'react-beautiful-dnd'
 import { Cell as CellType, Tile as TileType } from '../../../game/board'
-import { setCellTile } from '../../../store/store'
 import Tile from '../Tile/Tile'
 import styles from './Cell.module.scss'
 
@@ -44,36 +43,31 @@ const renderPips = (cell: CellType): JSX.Element | null => {
 const renderTile = (tile: TileType): JSX.Element => {
   return (
     <div className={styles.tile}>
-      <Tile tile={tile} />
+      <Tile tile={tile} index={0} />
     </div>
   )
 }
 
 const Cell = ({ cell }: CellProps): JSX.Element => {
-  const [, drop] = useDrop({
-    accept: 'tile',
-    canDrop: () => cell.tile === undefined,
-    drop: dragObject => {
-      const tile = (dragObject as any).tile as TileType
-      setCellTile(cell, tile)
-    },
-  })
-
-  const handleCellClick = useCallback(() => {
-    if (!cell.tile) return
-    setCellTile(cell, undefined)
-  }, [cell])
-
   return (
-    <div
-      ref={drop}
-      className={styles[cell.type]}
-      onDoubleClick={handleCellClick}
-    >
-      <p className={styles.text}>{renderText(cell)}</p>
-      {renderPips(cell)}
-      {cell.tile && renderTile(cell.tile)}
-    </div>
+    <Droppable droppableId={`${cell.x}-${cell.y}`}>
+      {(provided, snapshot): JSX.Element => (
+        <div
+          {...provided.droppableProps}
+          ref={provided.innerRef}
+          className={styles[cell.type]}
+          style={{
+            zIndex: snapshot.isDraggingOver ? 9 : 1,
+            transform: snapshot.isDraggingOver ? 'scale(1.2)' : 'scale(1)',
+          }}
+        >
+          <p className={styles.text}>{renderText(cell)}</p>
+          {renderPips(cell)}
+          {cell.tile && renderTile(cell.tile)}
+          <div>{provided.placeholder}</div>
+        </div>
+      )}
+    </Droppable>
   )
 }
 

@@ -1,12 +1,19 @@
 .tilebar {
+  position: absolute;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  position: absolute;
   left: 1rem;
   right: 1rem;
   bottom: 1rem;
 
   padding: 10px;
   background-color: rgb(4, 73, 4);
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  > * {
+    margin: 5px;
+  }
 }
