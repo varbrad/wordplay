@@ -1,6 +1,7 @@
 # Folders
 .next
 .vscode
+coverage
 node_modules
 
 # Files

@@ -14,7 +14,8 @@
     "dev": "next",
     "lint": "eslint src --ext=ts,tsx",
     "start": "next start",
-    "test": "jest"
+    "test": "jest",
+    "tsc": "tsc --noEmit"
   },
   "dependencies": {
     "immer": "^6.0.3",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@drpg/eslint-config": "^1.0.18-alpha.0",
+    "@jackfranklin/test-data-bot": "^1.1.0",
     "@types/jest": "^25.2.1",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",

@@ -34,8 +34,8 @@ export interface StoreState {
 }
 
 export const createInitialState = (
-  intialState?: Partial<StoreState>,
+  initialState?: Partial<StoreState>,
 ): StoreState => ({
   racks: [],
-  ...intialState,
+  ...initialState,
 })
