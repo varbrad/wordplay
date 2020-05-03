@@ -2,7 +2,7 @@ import React from 'react'
 
 const Index = (): JSX.Element => {
   return (
-    <div>
+    <div style={{ backgroundColor: '#00a360' }}>
       <p>Hello!</p>
     </div>
   )
