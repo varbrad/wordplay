@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createInitialState should match a snapshot if no arguments provided 1`] = `
+Object {
+  "racks": Array [],
+}
+`;

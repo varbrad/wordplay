@@ -13,23 +13,25 @@
     "build": "next build",
     "dev": "next",
     "lint": "eslint src --ext=ts,tsx",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest"
   },
   "dependencies": {
-    "firebase": "^7.14.1",
-    "mutik": "^0.1.4",
+    "immer": "^6.0.3",
     "next": "^9.3.5",
-    "react": "0.0.0-experimental-e5d06e34b",
-    "react-beautiful-dnd": "^13.0.0",
-    "react-dom": "0.0.0-experimental-e5d06e34b",
-    "react-zoom-pan-pinch": "^1.6.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "zustand": "^2.2.3"
   },
   "devDependencies": {
     "@drpg/eslint-config": "^1.0.18-alpha.0",
+    "@types/jest": "^25.2.1",
     "@types/react": "^16.9.34",
-    "@types/react-beautiful-dnd": "^12.1.2",
-    "@types/react-dom": "^16.9.6",
+    "@types/react-dom": "^16.9.7",
     "eslint": "^6.8.0",
-    "sass": "^1.26.5"
+    "jest": "^25.5.4",
+    "sass": "^1.26.5",
+    "ts-jest": "^25.4.0",
+    "typescript": "^3.8.3"
   }
 }

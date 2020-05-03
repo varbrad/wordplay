@@ -1,17 +1,9 @@
-import React, { useState } from 'react'
-import Link from 'next/link'
-import TextInput from '../components/ui/TextInput/TextInput'
+import React from 'react'
 
 const Index = (): JSX.Element => {
-  const [code, setCode] = useState('')
-
   return (
     <div>
-      <p>Enter a room code</p>
-      <TextInput value={code} onChange={setCode} />
-      <Link href='/game/[code]' as={`/game/${code}`}>
-        <a>Go</a>
-      </Link>
+      <p>Hello!</p>
     </div>
   )
 }
