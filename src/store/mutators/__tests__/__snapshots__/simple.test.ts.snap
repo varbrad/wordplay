@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`simple mutator should add a new tile to the rack 1`] = `
+Array [
+  Object {
+    "id": "a",
+    "tiles": Array [],
+  },
+]
+`;

@@ -21,4 +21,15 @@ describe('set', () => {
     expect(set).toHaveBeenCalledTimes(1)
     expect(set).toHaveBeenCalledWith(state)
   })
+
+  it('should be called functionally if preserve is false', () => {
+    const set = jest.fn()
+    const state = { racks: [] }
+
+    const mutators = createMutators(set)
+    mutators.set(state, false)
+
+    expect(set).toHaveBeenCalledTimes(1)
+    expect(set).toHaveBeenCalledWith(expect.any(Function))
+  })
 })

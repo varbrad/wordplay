@@ -4,8 +4,9 @@ import { createMutators, StoreMutations } from './mutators'
 
 type Store = StoreState & StoreMutations
 
-export const [useStore, store] = create<Store>(set => ({
-  // Make our mutators
-  ...createMutators(set),
-  ...createInitialState(),
-}))
+export const makeStore = (initialState?: Partial<StoreState>) =>
+  create<Store>(set => ({
+    // Make our mutators
+    ...createMutators(set),
+    ...createInitialState(initialState),
+  }))
